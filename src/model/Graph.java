@@ -16,4 +16,8 @@ public class Graph {
     public List<Nodo> getNodes() {
         return nodes;
     }
+    
+    public void dijkstra() {
+    	
+    }
 }
