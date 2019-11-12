@@ -1,4 +1,4 @@
-package model;
+package model_One;
 
 public class Vertice {
     private Nodo origen;
