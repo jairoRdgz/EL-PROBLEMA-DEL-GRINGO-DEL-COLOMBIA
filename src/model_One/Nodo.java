@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Nodo {
-    private String city;
+   
+	private String city;
     private List<Vertice> vertices;
  
     public Nodo(String city) {
         this.city = city;
     }
- 
     public String getCity() {
         return city;
     }
