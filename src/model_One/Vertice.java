@@ -1,7 +1,8 @@
 package model_One;
 
 public class Vertice {
-    private Nodo origen;
+  
+	private Nodo origen;
     private Nodo destino;
     private double precioBoleto;
  
@@ -34,4 +35,9 @@ public class Vertice {
     public void setPrecioBoleto(double precioBoleto) {
         this.precioBoleto = precioBoleto;
     }
+
+	
+	public double comparacionDePrecios(Vertice o) {
+		return precioBoleto - o.precioBoleto;
+	}
 }
