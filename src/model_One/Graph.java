@@ -53,4 +53,43 @@ public class Graph {
 			}
 		}
 	}
+	
+	/*
+	 * Is an algorithm for finding the shortest paths between nodes in a graph.
+	 * pre The graph must be different from null
+	 * @param graph[][] Matrix representing the graph
+	 * @param size number of vertices (Me lo inventé, jonatan no nos bajes, nunca viste esto)
+	 * post The graph incidence matrix is completed
+	 */
+	public void dijkstra(int graph[][], int size) {
+		int dist[] = new int [size];
+		Boolean[] tmp = new Boolean[size];
+		for (int i = 0; i < size; i++) {
+			dist[i] = Integer.MAX_VALUE;
+			tmp[i] = false;
+		}
+		
+		dist[0] = 0;
+		for (int i = 0; i < size; i++) {
+			int temp = minDistance(dist,tmp, size);
+			tmp[i] = true;
+			
+			for (int j = 0; j < size; j++) {
+				if(!tmp[j] && graph[temp][j]!=0 && dist[temp]!=Integer.MAX_VALUE && dist[temp]+graph[temp][j] < dist[j]) {
+					dist[j] = dist[temp] + graph[temp][j];
+				}
+			}
+		}
+	}
+	
+	protected int minDistance(int[] dist, Boolean[] tmp, int size) {
+		int min = Integer.MAX_VALUE, index = -1;
+		for (int i = 0; i < size; i++) {
+			if(tmp[i] == false && dist[i] <= min) {
+				min = dist[i];
+				index = i;
+			}
+		}
+		return index;
+	}
 }
