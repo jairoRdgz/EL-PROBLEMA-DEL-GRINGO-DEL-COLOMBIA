@@ -1,32 +1,32 @@
-package Kruskal;
+package KruskalYPrim;
 import java.util.ArrayList;
 
 public class AlgoritmoKruskal{
 	
 	public Grafo aplicarKruskal(Grafo grafo){
-		Grafo árbol=new Grafo();
-		ArrayList<String> nodos=grafo.getNombres();
+		Grafo arbol=new Grafo();
+		ArrayList<String> nodos=grafo.getCities();
 
 		for(int j=0;j<nodos.size();j++){
-			árbol.ingresarNodo(nodos.get(j));
+			arbol.ingresarNodo(nodos.get(j));
 		}
 
 		ArrayList<Arco> L=(ArrayList<Arco>)grafo.getAristas().clone();
 
 		Arco pro=L.get(0);
-		árbol.adicionarEnlace(pro.getInicial(), pro.getTerminal(), pro.getPeso());
+		arbol.adicionarEnlace(pro.getInicial(), pro.getTerminal(), pro.getPeso());
 		L.remove(pro);
 
 		while(L.size()!=0){
 			pro=L.get(0);
 
-			if(HayCiclo(árbol, pro,árbol.getNodo(pro.getTerminal()) , pro.getTerminal())==false)
-				árbol.adicionarEnlace(pro.getInicial(), pro.getTerminal(), pro.getPeso());
+			if(HayCiclo(arbol, pro,arbol.getNodo(pro.getTerminal()) , pro.getTerminal())==false)
+				arbol.adicionarEnlace(pro.getInicial(), pro.getTerminal(), pro.getPeso());
 
 			L.remove(pro);
 		}
 
-		return árbol;
+		return arbol;
 	}
 
 	public boolean HayCiclo(Grafo g,Arco aVerificar,Nodo terminal,String N){
@@ -42,7 +42,7 @@ public class AlgoritmoKruskal{
 			Enlace nodo=aux.get(i);
 
 			if(nodo.getDestino().equals(N)==false)
-				if( HayCiclo(g,aVerificar,g.getNodo(nodo.getDestino()),terminal.getNombre()))
+				if( HayCiclo(g,aVerificar,g.getNodo(nodo.getDestino()),terminal.getCity()))
 									return true;
 		}
 

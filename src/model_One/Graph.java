@@ -19,10 +19,6 @@ public class Graph {
 		return nodes;
 	}
 
-	public void dijkstra() {
-
-	}
-
 	/*
 	 * the method implements the Floyd algorithm - Warshall. This is an algorithm
 	 * for finding shortest paths in a weighted graph with positive or negative edge
@@ -60,7 +56,7 @@ public class Graph {
 	 * Is an algorithm for finding the shortest paths between nodes in a graph.
 	 * pre The graph must be different from null
 	 * @param graph[][] Matrix representing the graph
-	 * @param size number of vertices (Me lo inventÈ, jonatan no nos bajes, nunca viste esto)
+	 * @param size number of vertices (Me lo inventÅE jonatan no nos bajes, nunca viste esto)
 	 * post The graph incidence matrix is completed
 	 */
 	public void dijkstra(int graph[][], int size) {
