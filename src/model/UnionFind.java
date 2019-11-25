@@ -1,0 +1,63 @@
+package model;
+
+// simple union-find based on int[] arrays
+// for  "parent" and "rank"
+// implements the "disjoint-set forests" described at
+// http://en.wikipedia.org/wiki/Disjoint-set_data_structure
+// which have almost constant "amortized" cost per operation
+// (actually O(inverse Ackermann))
+
+//Source: https://www.cs.waikato.ac.nz/~bernhard/317/source/graph/UnionFind.java
+
+import java.util.*;
+
+public class UnionFind {
+
+  private int[] parent;
+  private int[] rank;
+
+
+  public int find(int i) {
+
+    int p = parent[i];
+    if (i == p) {
+      return i;
+    }
+    return parent[i] = find(p);
+
+  }
+
+
+  public void union(int i, int j) {
+
+    int root1 = find(i);
+    int root2 = find(j);
+
+    if (root2 == root1) return;
+
+    if (rank[root1] > rank[root2]) {
+      parent[root2] = root1;
+    } else if (rank[root2] > rank[root1]) {
+      parent[root1] = root2;
+    } else {
+      parent[root2] = root1;
+      rank[root1]++;
+    }
+  }
+
+
+  public UnionFind(int max) {
+
+    parent = new int[max];
+    rank = new int[max];
+
+    for (int i = 0; i < max; i++) {
+      parent[i] = i;
+    }
+  }
+
+  
+  public String toString() {
+    return "<UnionFind\np " + Arrays.toString(parent) + "\nr " + Arrays.toString(rank) + "\n>";
+  }
+}
