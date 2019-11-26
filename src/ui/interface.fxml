@@ -13,6 +13,6 @@
          </image>
       </ImageView>
       <Label fx:id="ciudades" layoutX="770.0" layoutY="14.0" />
-      <Label fx:id="distanciasInicial" layoutX="900.0" layoutY="14.0" />
+      <Label fx:id="distanciasInicial" layoutX="900.0" layoutY="14.0" textAlignment="RIGHT" />
    </children>
 </Pane>
