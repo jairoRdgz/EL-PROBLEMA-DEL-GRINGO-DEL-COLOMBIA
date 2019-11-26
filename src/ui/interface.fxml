@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 
 
-<ScrollPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.ControllerClass">
+<ScrollPane prefHeight="572.0" prefWidth="1065.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.ControllerClass">
    <content>
       <AnchorPane>
          <children>
@@ -16,7 +16,7 @@
                <children>
                   <ImageView fitHeight="1005.0" fitWidth="744.0" layoutX="14.0" layoutY="14.0">
                      <image>
-                        <Image url="@../../imgs/fondo.jpeg" />
+                        <Image url="@../../imgs/croquis-del-mapa-de-colombia.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="ciudades" layoutX="770.0" layoutY="14.0" />
