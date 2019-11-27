@@ -1,10 +1,18 @@
 package ui;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class ControllerClass {
 
@@ -19,7 +27,16 @@ public class ControllerClass {
 
     @FXML
     void mostrarMatrizInicial(ActionEvent event) {
-    	
+    	Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("window.fxml"));
+			Scene s = new Scene(root);
+			Stage st = new Stage();
+			st.setTitle("Matriz de Adyancencia");
+			st.setScene(s);
+			st.setResizable(false);
+			st.showAndWait();
+		} catch (IOException e) {}
     }
 
 	@FXML
