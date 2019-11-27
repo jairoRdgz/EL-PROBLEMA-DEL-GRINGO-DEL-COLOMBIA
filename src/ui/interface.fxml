@@ -8,12 +8,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
+<ScrollPane prefHeight="1033.0" prefWidth="1065.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.ControllerClass"
 
-<ScrollPane prefHeight="1033.0" prefWidth="1065.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.ControllerClass">
+<ScrollPane prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.ControllerClass">
    <content>
       <AnchorPane>
          <children>
-            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1063.0">
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1010.0">
                <children>
                   <ImageView fitHeight="1005.0" fitWidth="744.0" layoutX="14.0" layoutY="14.0">
                      <image>
@@ -51,6 +52,7 @@
                   <Button layoutX="244.0" layoutY="512.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="27.0" />
                   <Button layoutX="306.0" layoutY="445.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="27.0" />
                   <Button layoutX="239.0" layoutY="436.0" mnemonicParsing="false" prefHeight="2.0" prefWidth="0.0" />
+                  <Button layoutX="770.0" layoutY="600.0" mnemonicParsing="false" onAction="#mostrarMatrizInicial" text="Matriz Adyacencia" />
                </children>
             </Pane>
          </children>

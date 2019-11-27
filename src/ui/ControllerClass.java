@@ -1,23 +1,43 @@
 package ui;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class ControllerClass {
 
-	@FXML
-	private ResourceBundle resources;
+    @FXML
+    private ResourceBundle resources;
 
-	@FXML
-	private URL location;
+    @FXML
+    private URL location;
 
-	@FXML
-	private Label ciudades;
+    @FXML
+    private Label ciudades;
 
-	@FXML
-	private Label distanciasInicial;
+    @FXML
+    void mostrarMatrizInicial(ActionEvent event) {
+    	Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("window.fxml"));
+			Scene s = new Scene(root);
+			Stage st = new Stage();
+			st.setTitle("Matriz de Adyancencia");
+			st.setScene(s);
+			st.setResizable(false);
+			st.showAndWait();
+		} catch (IOException e) {}
+    }
 
 	@FXML
 	void initialize() {
@@ -30,11 +50,5 @@ public class ControllerClass {
 				+ "21.	Quibdó\r\n" + "22.	Riohacha\r\n" + "23.	San Andrés\r\n" + "24.	Cúcuta\r\n"
 				+ "25.	Guaviare\r\n" + "26.	Pasto\r\n" + "27.	Santa Marta\r\n" + "28.	Sincelejo\r\n"
 				+ "29.	Tunja\r\n" + "30.	Valledupar\r\n" + "31.	Villavicencio\r\n" + "32.	Yopal");
-
-		distanciasInicial.setText("$$$$\r\n"
-						+ "396\r\n" + "181\r\n" + "704\r\n" + "0\r\n" + "288\r\n" + "307\r\n" + "650\r\n" + "384\r\n"
-						+ "133\r\n" + "687\r\n" + "1083\r\n" + "165\r\n" + "239\r\n" + "575\r\n" + "488\r\n" + "492\r\n"
-						+ "239\r\n" + "181\r\n" + "378\r\n" + "750\r\n" + "312\r\n" + "770\r\n" + "1220\r\n" + "394\r\n"
-						+ "286\r\n" + "518\r\n" + "726\r\n" + "542\r\n" + "122\r\n" + "659\r\n" + "79\r\n" + "198\r\n");
 	}
 }
