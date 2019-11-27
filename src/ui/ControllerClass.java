@@ -36,8 +36,10 @@ public class ControllerClass {
 		} catch (IOException e) {}
     }
     
-    public void caminoMinimo() {
-    	
+
+    @FXML
+    void printMatix(ActionEvent event) {
+
     }
 
 	@FXML
