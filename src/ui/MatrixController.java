@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import model.AdjMatrixGraph;
+import model.Vertex;
 
 public class MatrixController {
 	protected static AdjMatrixGraph<Integer> grafo;
@@ -19,6 +20,18 @@ public class MatrixController {
 
     @FXML
     private Label matrix;
+    
+   public void dijkstra(int origin) {
+	   Vertex<Integer> vertice=null;
+	   if(origin==-1) {
+		   //Bogota a default value 
+		   vertice = new Vertex<Integer>(4);   
+	   }else {
+		   //when you choose from where to start
+		   vertice = new Vertex<Integer>(origin);
+	   }
+	   grafo.dijkstra(vertice);
+   }
 
     @FXML
     private ComboBox<String> origen;
