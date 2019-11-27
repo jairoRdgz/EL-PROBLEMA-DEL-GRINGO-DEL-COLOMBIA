@@ -35,11 +35,19 @@ public class ControllerClass {
 			st.showAndWait();
 		} catch (IOException e) {}
     }
-    
 
     @FXML
     void printMatix(ActionEvent event) {
-
+    	Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("matrix.fxml"));
+			Scene s = new Scene(root);
+			Stage st = new Stage();
+			st.setTitle("Precio de los boletos minimos entre las ciudades");
+			st.setScene(s);
+			st.setResizable(false);
+			st.showAndWait();
+		} catch (IOException e) {}
     }
 
 	@FXML
