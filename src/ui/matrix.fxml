@@ -15,7 +15,7 @@
       </Label>
       <ComboBox fx:id="origen" layoutX="30.0" layoutY="90.0" prefWidth="150.0" />
       <ComboBox fx:id="destino" layoutX="216.0" layoutY="90.0" prefWidth="150.0" />
-      <Button fx:id="calcular" layoutX="400.0" layoutY="90.0" mnemonicParsing="false" text="Calcular" />
+      <Button layoutX="400.0" layoutY="90.0" mnemonicParsing="false" onAction="#calcular" text="Calcular" />
       <Label fx:id="distancia" layoutX="200.0" layoutY="130.0">
          <font>
             <Font size="14.0" />

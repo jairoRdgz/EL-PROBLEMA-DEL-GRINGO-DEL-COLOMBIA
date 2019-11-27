@@ -2,8 +2,8 @@ package ui;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import model.AdjMatrixGraph;
@@ -27,20 +27,94 @@ public class MatrixController {
     private ComboBox<String> destino;
 
     @FXML
-    private Button calcular;
-
-    @FXML
     private Label distancia;
 	
 	@FXML
 	void initialize() {
 		grafo = new AdjMatrixGraph<Integer>(false, true);
 		
+		inicializarComboBox();
+		
+		
 		inicializarGrafo();
 		
 		
 	}
+	
+    @FXML
+    void calcular(ActionEvent event) {
+    	
+    }
 
+    private void inicializarComboBox() {
+    	origen.getItems().add("Arauca");
+    	origen.getItems().add("Armenia");
+    	origen.getItems().add("Barranquilla");
+    	origen.getItems().add("Bogota");
+    	origen.getItems().add("Bucaramanga");
+    	origen.getItems().add("Cali");
+    	origen.getItems().add("Cartagena");
+    	origen.getItems().add("Florencia");
+    	origen.getItems().add("Ibague");
+    	origen.getItems().add("Inirida");
+    	origen.getItems().add("Leticia");
+    	origen.getItems().add("Manizales");
+    	origen.getItems().add("Medellin");
+    	origen.getItems().add("Mitu");
+    	origen.getItems().add("Mocoa");
+    	origen.getItems().add("Monteria");
+    	origen.getItems().add("Neiva");
+    	origen.getItems().add("Pereira");
+    	origen.getItems().add("Popayan");
+    	origen.getItems().add("Puerto Carreño");
+    	origen.getItems().add("Quibdo");
+    	origen.getItems().add("Riohacha");
+    	origen.getItems().add("San Andres");
+    	origen.getItems().add("Cucuta");
+    	origen.getItems().add("Guaviare");
+    	origen.getItems().add("Pasto");
+    	origen.getItems().add("Santa Marta");
+    	origen.getItems().add("Sincelejo");
+    	origen.getItems().add("Tunja");
+    	origen.getItems().add("Valledupar");
+    	origen.getItems().add("Villavicencio");
+    	origen.getItems().add("Yopal");
+    	
+    	destino.getItems().add("Arauca");
+    	destino.getItems().add("Armenia");
+    	destino.getItems().add("Barranquilla");
+    	destino.getItems().add("Bogota");
+    	destino.getItems().add("Bucaramanga");
+    	destino.getItems().add("Cali");
+    	destino.getItems().add("Cartagena");
+    	destino.getItems().add("Florencia");
+    	destino.getItems().add("Ibague");
+    	destino.getItems().add("Inirida");
+    	destino.getItems().add("Leticia");
+    	destino.getItems().add("Manizales");
+    	destino.getItems().add("Medellin");
+    	destino.getItems().add("Mitu");
+    	destino.getItems().add("Mocoa");
+    	destino.getItems().add("Monteria");
+    	destino.getItems().add("Neiva");
+    	destino.getItems().add("Pereira");
+    	destino.getItems().add("Popayan");
+    	destino.getItems().add("Puerto Carreño");
+    	destino.getItems().add("Quibdo");
+    	destino.getItems().add("Riohacha");
+    	destino.getItems().add("San Andres");
+    	destino.getItems().add("Cucuta");
+    	destino.getItems().add("Guaviare");
+    	destino.getItems().add("Pasto");
+    	destino.getItems().add("Santa Marta");
+    	destino.getItems().add("Sincelejo");
+    	destino.getItems().add("Tunja");
+    	destino.getItems().add("Valledupar");
+    	destino.getItems().add("Villavicencio");
+    	destino.getItems().add("Yopal");
+    }
+    
+    
 	private void inicializarGrafo() {
 		String f = "Arauca;Armenia;Barranquilla;Bogotá;Bucaramanga;Cali;Cartagena;Florencia;Ibagué;Inírida;Leticia;Manizales;Medellín;Mitú;Mocoa;Montería;Neiva;Pereira;Popayán;Puerto Carreño;Quibdó;Riohacha;San Andrés;Cúcuta;Guaviare;Pasto;Santa Marta;Sincelejo;Valledupar;Villavicencio;Yopal";
 
