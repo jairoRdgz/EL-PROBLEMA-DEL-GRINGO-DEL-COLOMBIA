@@ -4,8 +4,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.stage.StageStyle;
 import model.AdjMatrixGraph;
 import model.Vertex;
 
@@ -20,6 +23,8 @@ public class MatrixController {
 
 	@FXML
 	private Label matrix;
+	
+	private double distance;
 
 	public void dijkstra(int origin) {
 		Vertex<Integer> vertice = null;
@@ -49,85 +54,177 @@ public class MatrixController {
 		inicializarComboBox();
 
 		inicializarGrafo();
-
 	}
 
 	@FXML
 	void calcular(ActionEvent event) {
 		String tmp = origen.getValue();
+		String vojabes = destino.getValue();
+		boolean one = false;
+		boolean two = false;
+		
 		int origin = 0;
 		int destination = 0;
 
-		if (tmp.equals("Arauca")) {
-			origin = 1;
-		} else if (tmp.equals("Armenia")) {
-			origin = 2;
-		} else if (tmp.equals("Barranquilla")) {
-			origin = 3;
-		} else if (tmp.equals("Bogota")) {
-			origin = 4;
-		} else if (tmp.equals("Bucaramanga")) {
-			origin = 5;
-		} else if (tmp.equals("Cali")) {
-			origin = 6;
-		} else if (tmp.equals("Cartagena")) {
-			origin = 7;
-		} else if (tmp.equals("Florencia")) {
-			origin = 8;
-		} else if (tmp.equals("Ibague")) {
-			origin = 9;
-		} else if (tmp.equals("Inirida")) {
-			origin = 10;
-		} else if (tmp.equals("Leticia")) {
-			origin = 11;
-		} else if (tmp.equals("Manizales")) {
-			origin = 12;
-		} else if (tmp.equals("Medellin")) {
-			origin = 13;
-		} else if (tmp.equals("Mitu")) {
-			origin = 14;
-		} else if (tmp.equals("Mocoa")) {
-			origin = 15;
-		} else if (tmp.equals("Monteria")) {
-			origin = 16;
-		} else if (tmp.equals("Neiva")) {
-			origin = 17;
-		} else if (tmp.equals("Pereira")) {
-			origin = 18;
-		} else if (tmp.equals("Popayan")) {
-			origin = 19;
-		} else if (tmp.equals("Puerto Carreño")) {
-			origin = 20;
-		} else if (tmp.equals("Quibdo")) {
-			origin = 21;
-		} else if (tmp.equals("Riohacha")) {
-			origin = 22;
-		} else if (tmp.equals("San Andres")) {
-			origin = 23;
-		} else if (tmp.equals("Cucuta")) {
-			origin = 24;
-		} else if (tmp.equals("Guaviare")) {
-			origin = 25;
-		} else if (tmp.equals("Pasto")) {
-			origin = 26;
-		} else if (tmp.equals("Santa Marta")) {
-			origin = 27;
-		} else if (tmp.equals("Sincelejo")) {
-			origin = 28;
-		} else if (tmp.equals("Tunja")) {
-			origin = 29;
-		} else if (tmp.equals("Valledupar")) {
-			origin = 30;
-		} else if (tmp.equals("Villavicencio")) {
-			origin = 31;
-		} else if (tmp.equals("Yopal")) {
-			origin = 32;
+		try {
+			if (tmp.equals("Arauca")) {
+				origin = 1;
+			} else if (tmp.equals("Armenia")) {
+				origin = 2;
+			} else if (tmp.equals("Barranquilla")) {
+				origin = 3;
+			} else if (tmp.equals("Bogota")) {
+				origin = 4;
+			} else if (tmp.equals("Bucaramanga")) {
+				origin = 5;
+			} else if (tmp.equals("Cali")) {
+				origin = 6;
+			} else if (tmp.equals("Cartagena")) {
+				origin = 7;
+			} else if (tmp.equals("Florencia")) {
+				origin = 8;
+			} else if (tmp.equals("Ibague")) {
+				origin = 9;
+			} else if (tmp.equals("Inirida")) {
+				origin = 10;
+			} else if (tmp.equals("Leticia")) {
+				origin = 11;
+			} else if (tmp.equals("Manizales")) {
+				origin = 12;
+			} else if (tmp.equals("Medellin")) {
+				origin = 13;
+			} else if (tmp.equals("Mitu")) {
+				origin = 14;
+			} else if (tmp.equals("Mocoa")) {
+				origin = 15;
+			} else if (tmp.equals("Monteria")) {
+				origin = 16;
+			} else if (tmp.equals("Neiva")) {
+				origin = 17;
+			} else if (tmp.equals("Pereira")) {
+				origin = 18;
+			} else if (tmp.equals("Popayan")) {
+				origin = 19;
+			} else if (tmp.equals("Puerto Carreño")) {
+				origin = 20;
+			} else if (tmp.equals("Quibdo")) {
+				origin = 21;
+			} else if (tmp.equals("Riohacha")) {
+				origin = 22;
+			} else if (tmp.equals("San Andres")) {
+				origin = 23;
+			} else if (tmp.equals("Cucuta")) {
+				origin = 24;
+			} else if (tmp.equals("Guaviare")) {
+				origin = 25;
+			} else if (tmp.equals("Pasto")) {
+				origin = 26;
+			} else if (tmp.equals("Santa Marta")) {
+				origin = 27;
+			} else if (tmp.equals("Sincelejo")) {
+				origin = 28;
+			} else if (tmp.equals("Tunja")) {
+				origin = 29;
+			} else if (tmp.equals("Valledupar")) {
+				origin = 30;
+			} else if (tmp.equals("Villavicencio")) {
+				origin = 31;
+			} else if (tmp.equals("Yopal")) {
+				origin = 32;
+			}
+			one = true;
+		} catch (NullPointerException e) {
+			Alert info = new Alert(AlertType.ERROR);
+			info.setTitle("ERROR");
+			info.setHeaderText(null);
+			info.initStyle(StageStyle.UTILITY);
+			info.setContentText("Choose an origin");
+			info.show();
+		}
+
+		try {
+			if (vojabes.equals("Arauca")) {
+				destination = 1;
+			} else if (vojabes.equals("Armenia")) {
+				destination = 2;
+			} else if (vojabes.equals("Barranquilla")) {
+				destination = 3;
+			} else if (vojabes.equals("Bogota")) {
+				destination = 4;
+			} else if (vojabes.equals("Bucaramanga")) {
+				destination = 5;
+			} else if (vojabes.equals("Cali")) {
+				destination = 6;
+			} else if (vojabes.equals("Cartagena")) {
+				destination = 7;
+			} else if (vojabes.equals("Florencia")) {
+				destination = 8;
+			} else if (vojabes.equals("Ibague")) {
+				destination = 9;
+			} else if (vojabes.equals("Inirida")) {
+				destination = 10;
+			} else if (vojabes.equals("Leticia")) {
+				destination = 11;
+			} else if (vojabes.equals("Manizales")) {
+				destination = 12;
+			} else if (vojabes.equals("Medellin")) {
+				destination = 13;
+			} else if (vojabes.equals("Mitu")) {
+				destination = 14;
+			} else if (vojabes.equals("Mocoa")) {
+				destination = 15;
+			} else if (vojabes.equals("Monteria")) {
+				destination = 16;
+			} else if (vojabes.equals("Neiva")) {
+				destination = 17;
+			} else if (vojabes.equals("Pereira")) {
+				destination = 18;
+			} else if (vojabes.equals("Popayan")) {
+				destination = 19;
+			} else if (vojabes.equals("Puerto Carreño")) {
+				destination = 20;
+			} else if (vojabes.equals("Quibdo")) {
+				destination = 21;
+			} else if (vojabes.equals("Riohacha")) {
+				destination = 22;
+			} else if (vojabes.equals("San Andres")) {
+				destination = 23;
+			} else if (vojabes.equals("Cucuta")) {
+				destination = 24;
+			} else if (vojabes.equals("Guaviare")) {
+				destination = 25;
+			} else if (vojabes.equals("Pasto")) {
+				destination = 26;
+			} else if (vojabes.equals("Santa Marta")) {
+				destination = 27;
+			} else if (vojabes.equals("Sincelejo")) {
+				destination = 28;
+			} else if (vojabes.equals("Tunja")) {
+				destination = 29;
+			} else if (vojabes.equals("Valledupar")) {
+				destination = 30;
+			} else if (vojabes.equals("Villavicencio")) {
+				destination = 31;
+			} else if (vojabes.equals("Yopal")) {
+				destination = 32;
+			}
+			two = true;
+		} catch (NullPointerException e) {
+			Alert info = new Alert(AlertType.ERROR);
+			info.setTitle("ERROR");
+			info.setHeaderText(null);
+			info.initStyle(StageStyle.UTILITY);
+			info.setContentText("Choose a destination");
+			info.show();
 		}
 		
-		
-		
-		
-		
+		if(one == true && two == true) {
+			double[][] matrixxx = grafo.floydwarshall();
+
+			distance = matrixxx[origin-1][destination-1];
+			
+			distancia.setText(distance + "");
+		}	
 	}
 
 	private void inicializarComboBox() {
