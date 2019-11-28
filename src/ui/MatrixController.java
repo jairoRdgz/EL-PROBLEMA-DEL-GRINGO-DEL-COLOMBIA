@@ -178,7 +178,6 @@ public class MatrixController {
 		grafo.addEdge(2, 24, 167);
 		grafo.addEdge(2, 25, 111);
 		grafo.addEdge(2, 26, 11);
-<<<<<<< Updated upstream
 		grafo.addEdge(2, 27, 13);
 		grafo.addEdge(2, 28, 114);
 		grafo.addEdge(2, 29, 144);
@@ -414,8 +413,6 @@ public class MatrixController {
 		grafo.addEdge(12,14,46);
 		grafo.addEdge(12,15,121);
 		grafo.addEdge(12,16,63);
-	}
-=======
 		grafo.addEdge(2, 27,13 );
 		grafo.addEdge(2, 28,114 );
 		grafo.addEdge(2,29 ,144 );
@@ -651,8 +648,5 @@ public class MatrixController {
 		grafo.addEdge(12,14,46);
 		grafo.addEdge(12,15,121);
 		grafo.addEdge(12,16,63);
-		grafo.addEdge(12,,);
-		
     }
->>>>>>> Stashed changes
 }
