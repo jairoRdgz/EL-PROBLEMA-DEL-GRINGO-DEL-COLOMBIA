@@ -1,27 +1,27 @@
 package model;
 
-public class Vertex<T> implements Comparable<Vertex<T>>{
+public class Vertex<T> implements Comparable<Vertex<T>> {
 
 	public static final int WHITE = 0;
 	public static final int GRAY = 1;
 	public static final int BLACK = 2;
-	
+
 	private T value;
-	//Distance
+	// Distance
 	private double d;
-	//IDK
+	// IDK
 	private int f;
-	
+
 	private int index;
-	
+
 	private int color;
-	
+
 	private Vertex<T> pred;
-	
+
 	public Vertex(T value) {
-		this.value=value;
-		pred=null;
-		color=WHITE;
+		this.value = value;
+		pred = null;
+		color = WHITE;
 	}
 
 	public T getValue() {
@@ -63,18 +63,17 @@ public class Vertex<T> implements Comparable<Vertex<T>>{
 	public void setPred(Vertex<T> pred) {
 		this.pred = pred;
 	}
-	
+
 	public int getIndex() {
 		return this.index;
 	}
-	
+
 	public void setIndex(int index) {
-		this.index=index;
+		this.index = index;
 	}
 
 	@Override
 	public int compareTo(Vertex<T> vertex) {
 		return Double.compare(d, vertex.d);
 	}
-	
 }

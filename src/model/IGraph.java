@@ -12,15 +12,11 @@ public interface IGraph<T> {
 	
 	public boolean isWeighted();
 	
-	//Deberia pedirse como par�metreo el Value
-	//PREGUNTAR SI SE DEBERIA TENER EL M�TODO QUE RECIBA UN VERTEX COMO PAR�METRO
 	public void addVertex(T value);
 
 	public void addEdge(T x, T y);
 	
 	public void addEdge(T x, T y, double w);
-	
-	//modificados los 3 m�todos de arriba
 	
 	public void removeVertex(T v);
 	
@@ -42,6 +38,5 @@ public interface IGraph<T> {
 	
 	public void bfs(Vertex<T> s);
 	
-	public void dfs();
-	
+	public void dfs();	
 }
