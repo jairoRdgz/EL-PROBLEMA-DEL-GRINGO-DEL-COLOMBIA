@@ -135,8 +135,7 @@ public class MatrixController {
 		for (int i = 0; i < cities.length; i++) {
 			grafo.addVertex(1+i);
 		}
-
-
+		
 		grafo.addEdge(1, 2, 20);
 		grafo.addEdge(1, 3, 177);
 		grafo.addEdge(1, 4,199);
