@@ -1,9 +1,13 @@
 package ui;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import model.AdjMatrixGraph;
@@ -20,18 +24,6 @@ public class MatrixController {
 
     @FXML
     private Label matrix;
-    
-   public void dijkstra(int origin) {
-	   Vertex<Integer> vertice=null;
-	   if(origin==-1) {
-		   //Bogota a default value 
-		   vertice = new Vertex<Integer>(4);   
-	   }else {
-		   //when you choose from where to start
-		   vertice = new Vertex<Integer>(origin);
-	   }
-	   grafo.dijkstra(vertice);
-   }
 
     @FXML
     private ComboBox<String> origen;
@@ -58,6 +50,71 @@ public class MatrixController {
     void calcular(ActionEvent event) {
     	
     }
+    
+    /* @FXML
+    void caminoMinimo(ActionEvent event) {
+    	
+    	List<String> choices = new ArrayList<>();
+    	choices.add("Arauca");
+    	choices.add("Armenia");
+    	choices.add("Barranquilla");
+    	choices.add("Bogota");
+    	choices.add("Bucaramanga");
+    	choices.add("Cali");
+    	choices.add("Cartagena");
+    	choices.add("Florencia");
+    	choices.add("Ibague");
+    	choices.add("Inirida");
+    	choices.add("Leticia");
+    	choices.add("Manizales");
+    	choices.add("Medellin");
+    	choices.add("Mitu");
+    	choices.add("Mocoa");
+    	choices.add("Monteria");
+    	choices.add("Neiva");
+    	choices.add("Pereira");
+    	choices.add("Popayan");
+    	choices.add("Puerto Carreño");
+    	choices.add("Quibdo");
+    	choices.add("Riohacha");
+    	choices.add("San Andres");
+    	choices.add("Cucuta");
+    	choices.add("Guaviare");
+    	choices.add("Pasto");
+    	choices.add("Santa Marta");
+    	choices.add("Sincelejo");
+    	choices.add("Tunja");
+    	choices.add("Valledupar");
+    	choices.add("Villavicencio");
+    	choices.add("Yopal");
+
+    	ChoiceDialog<String> dialog = new ChoiceDialog<>("b", choices);
+    	dialog.setTitle("Choice Dialog");
+    	dialog.setHeaderText("Look, a Choice Dialog");
+    	dialog.setContentText("Choose your letter:");
+
+    	// Traditional way to get the response value.
+    	Optional<String> result = dialog.showAndWait();
+    	if (result.isPresent()){
+    	    System.out.println("Your choice: " + result.get());
+    	}
+
+    	// The Java 8 way to get the response value (with lambda expression).
+    	result.ifPresent(letter -> System.out.println("Your choice: " + letter));
+    	
+    }*/
+    
+    public void dijkstra(int origin) {
+ 	   Vertex<Integer> vertice=null;
+ 	   if(origin==-1) {
+ 		   //Bogota a default value 
+ 		   vertice = new Vertex<Integer>(4);   
+ 	   }else {
+ 		   //when you choose from where to start
+ 		   vertice = new Vertex<Integer>(origin);
+ 	   }
+ 	   grafo.dijkstra(vertice);
+     }
 
     private void inicializarComboBox() {
     	origen.getItems().add("Arauca");
