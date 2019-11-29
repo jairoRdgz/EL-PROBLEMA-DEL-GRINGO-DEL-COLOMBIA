@@ -60,6 +60,10 @@ public class AdjMatrixGraphTest {
 	}
 
 	protected void setupStage2() {
+		
+	}
+	
+	protected void setupStage3() {
 		grafo = new AdjMatrixGraph<Integer>(false, true);
 
 		grafo.addVertex(1);
@@ -89,7 +93,7 @@ public class AdjMatrixGraphTest {
 
 	@Test
 	protected void dijkstraTest() {
-		setupStage2();
+		setupStage3();
 		Vertex<Integer> vertex = grafo.getVertices().get(0);
 		Vertex<Integer> pred = vertex.getPred();
 
