@@ -4,27 +4,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-<<<<<<< HEAD
 public class AdjMatrixGraphTest {
 	private AdjMatrixGraph<Integer> grafo;
 
 	protected void setupStage1() {
 		grafo = new AdjMatrixGraph<Integer>(true, true);
-
-=======
-class AdjMatrixGraphTest {
-
-	private AdjListGraph<Integer> grafo;
-	
-	protected void setupStage1() {
-		grafo = new AdjListGraph<Integer>(false,true);
 		
->>>>>>> fa56ad6cc7fe688db2eb2c4e5b7b5bfe19a3b92e
 		grafo.addVertex(1);
 		grafo.addVertex(2);
 		grafo.addVertex(3);
 		grafo.addVertex(4);
-<<<<<<< HEAD
 
 		grafo.addEdge(1, 3, -2.0);
 		grafo.addEdge(3, 4, 2.0);
@@ -67,15 +56,10 @@ class AdjMatrixGraphTest {
 				assertTrue(asItShouldBe[i][j] == product[i][j], "La ruta minima entre " + i + " y " + j + " debería ser " + asItShouldBe[i][j] + " pero es " + product[i][j]);
 			}
 		}
-=======
-		grafo.addVertex(5);
-		grafo.addVertex(6);
-		grafo.addVertex(7);
-		grafo.addVertex(8);
 	}
 	
 	protected void setupStage2() {
-		grafo = new AdjListGraph<Integer>(false, true);
+		grafo = new AdjMatrixGraph<Integer>(false, true);
 		
 		grafo.addVertex(1);
 		grafo.addVertex(2);
@@ -94,11 +78,7 @@ class AdjMatrixGraphTest {
 		grafo.addEdge(7, 4, 6);
 		grafo.addEdge(2, 5, 3);
 	}
-	
-	@Test
-	private void floydwarshallTest() {
-		
-	}
+
 	
 	@Test
 	protected void VertexCreationTest() {	
@@ -115,6 +95,5 @@ class AdjMatrixGraphTest {
 		
 		
 		assertEquals(vertex.getPred(), pred);
->>>>>>> fa56ad6cc7fe688db2eb2c4e5b7b5bfe19a3b92e
 	}
 }
