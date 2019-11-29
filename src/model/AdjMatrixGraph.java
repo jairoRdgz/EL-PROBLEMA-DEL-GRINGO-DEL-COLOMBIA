@@ -322,8 +322,6 @@ public class AdjMatrixGraph<T> implements IGraph<T> {
 			for (Vertex<T> v : neigh) {
 
 				double weight = getEdgeWeight(u, v);
-
-				// relax(u,v,weight)
 				double distanceFromU = u.getD() + weight;
 				if (distanceFromU < v.getD()) {
 					queue.remove(v);
