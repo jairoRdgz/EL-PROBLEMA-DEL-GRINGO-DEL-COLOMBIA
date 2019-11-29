@@ -96,7 +96,7 @@ public class ControllerClass {
 	}
     
     private void dijkstra(int origin) {
-    	Vertex<Integer> vertice = new Vertex<Integer>(origin);
+    	Vertex<Integer> vertice = grafo.getVertices().get(origin-1);
     	grafo.dijkstra(vertice);
     }
 
